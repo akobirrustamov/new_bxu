@@ -1,6 +1,11 @@
 import "./LandingPage.css";
 import React, { useEffect } from "react";
 import Header from "../../components/header/header";
+import Footer from "../../components/footer/Footer";
+import Partnership from "../../components/partnership/Partnership";
+import License from "../../components/license/License";
+import News from "../../components/news/News";
+
 function LandingPage() {
   useEffect(() => {
     // Header scroll effekti
@@ -41,41 +46,50 @@ function LandingPage() {
     };
   }, []);
   return (
-    <div className="landing-page">
-      <div>
-        <Header />
-      </div>
-      <main className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Xalqaro darajadagi Universitet talabasi bo'ling!
-          </h1>
-
-          <div className="feature-point">
-            Yuqori ta'lim sifati, zamonaviy o'quv auditoriyalari va zamonaviy
-            muhitga munosib yuqori salohiyatli professor o'qituvchilar
-          </div>
-
-          <div className="feature-point">
-            Eng yuqori maosh to'lanadigan IT kasblari (AI, Kiberxavfsizlik,
-            Ma'lumotlar ilmi, Raqamli biznes)
-          </div>
-
-          <div className="feature-point">
-            Universitetdagi startap laboratoriyasida o'z biznes yoki texnologik
-            loyihangizni amalga oshirishingiz mumkin!
-          </div>
-
-          <div className="action-buttons">
-            <a href="https://qabul.bxu.uz/" target="_blank">
-              <button className="primary-button">Ariza topshirish</button>
-            </a>
-            <button className="secondary-button">
-              Sirtqi va masofaviy ta'lim ham mavjud!
-            </button>
-          </div>
+    <div>
+      <div className="landing-page">
+        <div>
+          <Header />
         </div>
-      </main>
+        <main className="hero-section">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Xalqaro darajadagi Universitet talabasi bo'ling!
+            </h1>
+
+            <div className="feature-point">
+              Yuqori ta'lim sifati, zamonaviy o'quv auditoriyalari va zamonaviy
+              muhitga munosib yuqori salohiyatli professor o'qituvchilar
+            </div>
+
+            <div className="feature-point">
+              Eng yuqori maosh to'lanadigan IT kasblari (AI, Kiberxavfsizlik,
+              Ma'lumotlar ilmi, Raqamli biznes)
+            </div>
+
+            <div className="feature-point">
+              Universitetdagi startap laboratoriyasida o'z biznes yoki
+              texnologik loyihangizni amalga oshirishingiz mumkin!
+            </div>
+
+            <div className="action-buttons">
+              <a href="https://qabul.bxu.uz/" target="_blank">
+                <button className="primary-button">Ariza topshirish</button>
+              </a>
+              <button className="secondary-button">
+                Sirtqi va masofaviy ta'lim ham mavjud!
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div>
+        <Partnership />
+        <License />
+        <News />
+        <Footer />
+      </div>
     </div>
   );
 }
