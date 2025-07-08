@@ -1,5 +1,4 @@
 import "./LandingPage.css";
-import bg from "../images/bgimage.png";
 import React, { useEffect } from "react";
 import Header from "../../components/header/header";
 function LandingPage() {
@@ -43,14 +42,16 @@ function LandingPage() {
   }, []);
   return (
     <div className="landing-page">
-      <Header />
+      <div>
+        <Header />
+      </div>
       <main className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
             Xalqaro darajadagi Universitet talabasi bo'ling!
           </h1>
 
-          <div className="feature-point bg-red-500">
+          <div className="feature-point">
             Yuqori ta'lim sifati, zamonaviy o'quv auditoriyalari va zamonaviy
             muhitga munosib yuqori salohiyatli professor o'qituvchilar
           </div>
@@ -66,14 +67,13 @@ function LandingPage() {
           </div>
 
           <div className="action-buttons">
-            <button className="primary-button">Ariza topshirish</button>
+            <a href="https://qabul.bxu.uz/" target="_blank">
+              <button className="primary-button">Ariza topshirish</button>
+            </a>
             <button className="secondary-button">
               Sirtqi va masofaviy ta'lim ham mavjud!
             </button>
           </div>
-        </div>
-        <div className="hero-image">
-          {/* Background image will be set in CSS */}
         </div>
       </main>
     </div>
