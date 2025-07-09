@@ -1,188 +1,161 @@
-import React, {useEffect, useState} from 'react';
-import ApiCall, {baseUrl} from '../../config/index';
-
-import {Link, useNavigate} from "react-router-dom";
-
-
+import React, { useEffect, useRef, useState } from "react";
+import ApiCall, { baseUrl } from "../../config/index";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-function Gallery(props) {
-    const navigate = useNavigate();
-    const [show, setShow] = useState(true);
-    const [galleryImages, setGalleryImages] = useState([]);
-    const [youTube, setYoutube] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
-    useEffect(() => {
-        getGalleryImages();
-        getYouTube();
-    }, []);
+function Gallery() {
+  const [step, setStep] = useState(0);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [youTube, setYoutube] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const sliderRef = useRef();
 
-    const getGalleryImages = async () => {
-        try {
-            const response = await ApiCall('/api/v1/gallery', 'GET', null, null, true);
-            setGalleryImages(response.data);
-        } catch (error) {
-            console.error("Error fetching images:", error);
-            setError("Failed to load images.");
-        } finally {
-            setLoading(false);
-        }
-    };
+  useEffect(() => {
+    getGalleryImages();
+    getYouTube();
+  }, []);
 
-    const getYouTube = async () => {
-        try {
-            const response = await ApiCall('/api/v1/youtube/all', 'GET', null, null, false);
-            setYoutube(response.data);
-        } catch (error) {
-            console.error("Error fetching YouTube videos:", error);
-        }
-    };
+  const getGalleryImages = async () => {
+    try {
+      const response = await ApiCall(
+        "/api/v1/gallery",
+        "GET",
+        null,
+        null,
+        true
+      );
+      setGalleryImages(response.data);
+    } catch (error) {
+      console.error("Error fetching images:", error);
+      setError("Failed to load images.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 800,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,                // Enable auto-scroll
-        autoplaySpeed: 1500,
+  const getYouTube = async () => {
+    try {
+      const response = await ApiCall(
+        "/api/v1/youtube/all",
+        "GET",
+        null,
+        null,
+        false
+      );
+      setYoutube(response.data);
+    } catch (error) {
+      console.error("Error fetching YouTube videos:", error);
+    }
+  };
 
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 640,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+    ],
+  };
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>{error}</p>;
+  if (loading) return <p>Yuklanmoqda...</p>;
+  if (error) return <p>{error}</p>;
 
-    return (
-        <div className={"my-4"}>
-
-
-
-
-            <div className="galereya ">
-
-                <div className="gallery-container p-4 ">
-                    <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-                       Biiz
-                    </div>
-
-                    <div className="tabs">
-                        <span
-                            className={`tab ${!show ? "hover:bg-gray-200 rounded" : "active hover:bg-gray-200 rounded"}`}
-                            onClick={() => setShow(true)}> {t('gallery.tab_btn1')} </span>
-                        <span
-                            className={`tab ${show ? "hover:bg-gray-200 rounded" : "active hover:bg-gray-200 rounded"}`}
-                            onClick={() => setShow(false)}> {t('gallery.tab_btn2')} </span>
-                    </div>
-                    {/*gallery*/}
-
-                    {/* Gallery Slider start */}
-                    <div className={show ? "pb-4 " : "hidden"}>
-                        <Slider {...sliderSettings}>
-                            {galleryImages?.map(item => {
-                                const isVideo = item.mainPhoto?.name.toLowerCase()?.includes('.mp4') || item.mainPhoto?.name?.toLowerCase().includes('lover');
-
-                                return (
-                                    <div key={item.id} className="pt-0 p-8">
-                                        <div className="text-center rounded-xl shadow-warning-3">
-                                            <div className="flex justify-center items-center">
-                                                {isVideo ? (
-                                                    <video
-                                                        className="rounded-xl"
-                                                        style={{width: "360px", height: "320px"}}
-                                                        src={`${baseUrl}/api/v1/file/getFile/${item?.mainPhoto.id}`}
-                                                        autoPlay
-                                                        muted
-                                                        loop
-                                                        playsInline
-                                                    >
-                                                        Your browser does not support the video tag.
-                                                    </video>
-                                                ) : (
-                                                    <img
-                                                        src={`${baseUrl}/api/v1/file/getFile/${item?.mainPhoto?.id}`}
-                                                        alt={item.title}
-                                                        className="gallery-image rounded-xl cursor-pointer"
-                                                        style={{width: "360px", height: "320px"}}
-                                                    />
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </Slider>
-                    </div>
-
-                    {/* Gallery Slider end */}
-
-
-                    <div className={show ? "w-full items-center flex flex-wrap justify-center  text-center" : "hidden"}>
-
-                        <button onClick={() => navigate("/all-images")} style={{width: "250px"}}
-                                className='    text-white w-[40px] h-[36px] lg:w-[155px] lg:h-[36px] bg-[#004C88]  rounded-md text-[16px] uppercase'>
-
-                            {t('news.readMore')}</button>
-                    </div>
-                    {/*youTube*/}
-                    <div className={!show ? "" : "hidden"}>
-                        <div className={!show ? "gallery-grid block pb-3" : "hidden"}>
-                            {youTube?.slice(0, 3).map(video => {
-                                const iframeWithClass = video.iframe.replace(
-                                    /(<iframe.*?)(>)/,
-                                    `$1 class="w-full h-56"$2`
-                                );
-                                return (
-                                    <div key={video.id}
-                                         className="myYoutube shadow-md rounded p-4 my-3 hover:bg-gray-100">
-                                        <div dangerouslySetInnerHTML={{__html: iframeWithClass}}/>
-                                        <h6 className="my-2 bold text-xl">{video.title}</h6>
-                                        <p className={"text-blue-500"}>#{video.hashTag}</p>
-
-                                    </div>
-
-                                );
-                            })}
-
-                        </div>
-
-                    </div>
-                    <div
-                        className={!show ? "w-full items-center flex flex-wrap justify-center  text-center" : "hidden"}>
-
-                        <button onClick={() => navigate("/all-youtube")} style={{width: "250px"}}
-                                className='    text-white w-[40px] h-[36px] lg:w-[155px] lg:h-[36px] bg-[#004C88]  rounded-md text-[16px] uppercase'>
-
-                            {t('news.readMore')}</button>
-                    </div>
-
-                </div>
-            </div>
-
-
+  return (
+    <div className="my-20">
+      <div className="px-4 sm:px-6 lg:px-10">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl sm:text-5xl font-bold text-[#213972]">
+            Bitiruvchilar biz haqimizda
+          </h2>
+          <div className="flex space-x-3 text-[#213972]">
+            <button
+              onClick={() => sliderRef.current?.slickPrev()}
+              className="text-2xl border-2 border-[#213972] rounded-full hover:bg-[#213972] hover:text-white p-2 transition"
+            >
+              <FaArrowLeft />
+            </button>
+            <button
+              onClick={() => sliderRef.current?.slickNext()}
+              className="text-2xl border-2 border-[#213972] rounded-full hover:bg-[#213972] hover:text-white p-2 transition"
+            >
+              <FaArrowRight />
+            </button>
+          </div>
         </div>
-    );
+
+        {/* Slider Gallery */}
+        {step === 0 ? (
+          <Slider {...sliderSettings} ref={sliderRef}>
+            {galleryImages.map((item) => {
+              const isVideo = item.mainPhoto?.name
+                .toLowerCase()
+                .includes(".mp4");
+              return (
+                <div key={item.id} className="p-4">
+                  <div className="rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+                    {isVideo ? (
+                      <video
+                        className="w-full h-64 object-cover"
+                        src={`${baseUrl}/api/v1/file/getFile/${item?.mainPhoto.id}`}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={`${baseUrl}/api/v1/file/getFile/${item?.mainPhoto?.id}`}
+                        alt={item.title}
+                        className="w-full h-64 object-cover"
+                      />
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {youTube.slice(0, 3).map((video) => {
+              const iframeWithClass = video.iframe.replace(
+                /(<iframe.*?)(>)/,
+                `$1 class="w-full h-48 sm:h-56 rounded-xl"$2`
+              );
+              return (
+                <div
+                  key={video.id}
+                  className="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                >
+                  <div dangerouslySetInnerHTML={{ __html: iframeWithClass }} />
+                  <div className="p-4">
+                    <h6 className="text-lg font-semibold text-[#213972] mb-1">
+                      {video.title}
+                    </h6>
+                    <p className="text-sm text-blue-600">#{video.hashTag}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default Gallery;

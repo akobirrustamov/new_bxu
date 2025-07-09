@@ -15,8 +15,7 @@ function Footer() {
         {/* Map Section */}
         <div className="flex flex-col items-center mb-10">
           <div className="flex items-center mb-4">
-            <FaMapMarkerAlt className="text-red-500 text-2xl mr-2" />
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#213972]">
               Buxoro Xalqaro Universiteti manzili
             </h2>
           </div>

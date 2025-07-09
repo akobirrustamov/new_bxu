@@ -73,7 +73,7 @@ function Partnership() {
 
     return (
         <div className="py-12 bg-[#213972]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-8xl mx-auto px-6 sm:px-10 lg:px-14">
                 <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative pb-4">
                     Universitetning nufuzli hamkorlari
                     <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-white rounded-full"></span>
