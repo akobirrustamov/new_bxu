@@ -1,29 +1,42 @@
-import React from 'react';
+import React from "react";
+import { FaBook, FaUniversity, FaFileContract, FaClock, FaCommentAlt, FaBed } from "react-icons/fa";
+
+const items = [
+    { icon: <FaUniversity size={24} />, title: "Hemis platformasi", item: "https://student.hemis.uz/dashboard/login" },
+    { icon: <FaBook size={24} />, title: "E-kutubxona", item: "https://library.buxpxti.uz/" },
+    { icon: <FaFileContract size={24} />, title: "Shartnoma olish", item: "https://t.me/ulugbek_ravshanovich" },
+    {
+        icon: <FaClock size={24} />, title: "Dars jadvali", item: "https://student.hemis.uz/dashboard/login"
+    },
+    { icon: <FaCommentAlt size={24} />, title: "Taklif va shikoyatlar", item: "https://t.me/Barakayev_Xumoyun" },
+    { icon: <FaBed size={24} />, title: "Talabalar yotoqxonasi", item: "https://t.me/Barakayev_Xumoyun" },
+];
 
 function UsefulInfo() {
     return (
-        <div className="bg-white p-6 md:p-8 lg:p-10 rounded-lg shadow-md">
-            <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-                    Foydali malumotlar
-                </h2>
-
-                <p className="text-gray-600 mb-8 text-base md:text-lg">
-                    Bu nafaqat talebalar heyoti markazi, balki turli madaniyatlar kesishmasi hamda umrbod do'stlar orttiriladgan dargoh.
+        <div className="bg-white px-4 py-10 sm:px-8 lg:px-16">
+            <div className="max-w-6xl mx-auto text-left">
+                <h2 className="text-3xl font-bold text-[#213972] mb-3">Foydali ma'lumotlar</h2>
+                <p className="text-[#213972] text-base sm:text-lg mb-10 max-w-3xl">
+                    Bu nafaqat talabalar hayoti markazi, balki turli madaniyatlar kesishmasi hamda umrbodiy do‘stlar orttiriladigan dargoh.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="space-y-4">
-                        <div className="font-bold text-gray-800">Hemis platformasi</div>
-                        <div className="font-bold text-gray-800">E-kutubxona</div>
-                        <div className="font-bold text-gray-800">Shartnoma olish</div>
-                    </div>
-
-                    <div className="space-y-4">
-                        <div className="font-bold text-gray-800">Dars jadvali</div>
-                        <div className="font-bold text-gray-800">Taklif va shikoyatlar</div>
-                        <div className="font-bold text-gray-800">Talabalar yotoqxonasi</div>
-                    </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {items.map((item, idx) => (
+                        <a href={item.link}>
+                            <div
+                                key={idx}
+                                className="flex items-center bg-[#f7f8fa] p-5 rounded-xl shadow-sm hover:shadow-md transition group cursor-pointer"
+                            >
+                                <div className="w-12 h-12 bg-[#0c1d53] rounded-lg flex items-center justify-center shadow-xl group-hover:scale-105 transition">
+                                    <span className="text-white">{item.icon}</span>
+                                </div>
+                                <span className="ml-4 text-[16px] font-medium text-[#0c1d53] group-hover:underline">
+                                    {item.title}
+                                </span>
+                            </div>
+                        </a>
+                    ))}
                 </div>
             </div>
         </div>

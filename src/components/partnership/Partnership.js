@@ -14,7 +14,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function Partnership() {
-
     const partners = [
         { id: 1, src: partner1, alt: "Partner 1" },
         { id: 2, src: partner2, alt: "Partner 2" },
@@ -37,6 +36,7 @@ function Partnership() {
         autoplaySpeed: 2500,
         arrows: true,
         dots: false,
+        cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1)",
         responsive: [
             {
                 breakpoint: 1200,
@@ -72,21 +72,23 @@ function Partnership() {
     };
 
     return (
-        <div className=" ">
+        <div className="py-12 bg-[#213972]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 className="text-3xl font-bold text-center text-[#012c6e] mb-8">
+                <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 relative pb-4">
                     Universitetning nufuzli hamkorlari
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-white rounded-full"></span>
                 </h1>
 
-                <div className="partner-slider">
+                <div className="partner-slider relative">
                     <Slider {...settings}>
                         {partners.map((partner) => (
-                            <div key={partner.id} className="px-2">
-                                <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-32 flex items-center justify-center">
+                            <div key={partner.id} className="px-3 focus:outline-none">
+                                <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 h-40 flex items-center justify-center border border-gray-100 transform hover:-translate-y-1">
                                     <img
                                         src={partner.src}
                                         alt={partner.alt}
-                                        className="max-h-28 max-w-full object-contain"
+                                        className="max-h-24 max-w-full object-contain filter  hover:grayscale-0 transition-all duration-500"
+                                        loading="lazy"
                                     />
                                 </div>
                             </div>
@@ -94,6 +96,35 @@ function Partnership() {
                     </Slider>
                 </div>
             </div>
+
+            {/* Custom arrow styling */}
+            <style jsx global>{`
+                .slick-prev:before, 
+                .slick-next:before {
+                    color: white;
+                    font-size: 24px;
+                }
+                .slick-prev {
+                    left: -35px;
+                }
+                .slick-next {
+                    right: -35px;
+                }
+                .slick-slide {
+                    padding: 0 5px;
+                }
+                .slick-list {
+                    margin: 0 -5px;
+                }
+                @media (max-width: 768px) {
+                    .slick-prev {
+                        left: -15px;
+                    }
+                    .slick-next {
+                        right: -15px;
+                    }
+                }
+            `}</style>
         </div>
     );
 }

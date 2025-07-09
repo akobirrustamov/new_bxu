@@ -53,54 +53,38 @@ function News() {
         <div className="w-20 h-1 bg-blue-600 mt-2"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
         {newsList?.slice(0, 4).map((item, index) => (
-          <div key={index}>
-            <div
-              onClick={() => navigate(`/news-detail/${item.id}`)}
-              className="group relative bg-white rounded-lg overflow-hidden shadow-md cursor-pointer h-full flex flex-col"
-            >
-              {/* Image with hover effect */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
-                  src={`${baseUrl}/api/v1/file/getFile/${item?.mainPhoto?.id}`}
-                  alt={item.title}
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
+          <div
+            key={index}
+            onClick={() => navigate(`/news-detail/${item.id}`)}
+            className="cursor-pointer border border-blue-500 rounded-xl shadow hover:shadow-lg transition duration-300 bg-white overflow-hidden flex flex-col"
+          >
+            <div className="h-48 overflow-hidden">
+              <img
+                src={`${baseUrl}/api/v1/file/getFile/${item?.mainPhoto?.id}`}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 rounded-xl"
+              />
+            </div>
 
-              {/* Content with title and date */}
-              <div className="p-6 flex-grow flex flex-col">
-                {/* Title with bottom line */}
-                <div className="border-b border-gray-200">
-                  <h3
-                    className="text-[16px] font-semibold text-gray-800 group-hover:text-blue-600 transition-colors"
-                    title={item.title} // Show full title on hover
-                  >
-                    {truncateText(item.title)}
-                  </h3>
-                </div>
+            <div className="p-4 flex flex-col justify-between flex-grow bg-[#F8F8F8]">
+              <h3
+                className="text-left text-sm font-semibold text-gray-800 mb-2 hover:text-blue-600 transition"
+                title={item.title}
+              >
+                {truncateText(item.title)}
+              </h3>
 
-                {/* Date and optional subtitle */}
-                <div className="mt-auto">
-                  <p className="text-gray-500 text-sm italic">
-                    {formatDate(item.createdAt)}
-                  </p>
-                  {/* Optional subtitle */}
-                  {item.subtitle && (
-                    <p className="text-gray-600 mt-2">
-                      {truncateText(item.subtitle)}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* Heart icon placeholder */}
-              <div className="absolute top-4 right-4 text-red-500 text-2xl">
-                {/*👀*/}
-              </div>
+              <p className="text-left text-xs text-gray-500 mt-auto">
+                {new Date(item.createdAt).toLocaleString("uz-UZ", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </p>
             </div>
           </div>
         ))}

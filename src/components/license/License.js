@@ -8,7 +8,6 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 
 function License(props) {
-
     const [open, setOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState(null);
 
@@ -22,102 +21,103 @@ function License(props) {
     };
 
     return (
-        <div className="h-full bg-[#213972]">
-            <div className="bg-fixed  bg-cover  bg-center h-full">
-                <section className=" overlay bg-black bg-opacity-50" data-stellar-background-ratio="0.5">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12 col-12">
-                                <div className="content">
-                                    <h2 className="text-white text-center font-bold text-2xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-4xl">
-                                        Buxoro Xalqaro Universiteti Litsenziyasi
+        <div className="min-h-screen bg-[#213972] py-12 px-4 sm:px-6 lg:px-8">
+            {/* First License Section */}
+            <section className="mb-16">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-white text-center font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+                        Buxoro Xalqaro Universiteti Litsenziyasi
+                    </h2>
 
-                                    </h2>
-
-                                    <div className="flex-wrap flex justify-center">
-                                        <div className={"hidden xl:block"}></div>
-                                        <div>
-                                            <img
-                                                onClick={() => handleImageClick(l1)}
-                                                width={360}
-                                                src={l1}
-                                                alt="License 1"
-                                            />
-                                        </div>
-                                        <div>
-                                            <img
-                                                onClick={() => handleImageClick(l2)}
-                                                width={360}
-                                                src={l2}
-                                                alt="License 2"
-                                            />
-                                        </div>
-                                        <div>
-                                            <img
-                                                onClick={() => handleImageClick(l3)}
-                                                width={360}
-                                                src={l3}
-                                                alt="License 3"
-                                            />
-                                        </div>
-                                        <div className={"hidden xl:block"}></div>
-
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="flex flex-wrap justify-center gap-8">
+                        <div className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img
+                                onClick={() => handleImageClick(l1)}
+                                src={l1}
+                                alt="License 1"
+                                className="w-full max-w-md rounded-lg shadow-2xl border-4 border-[#f7c414]"
+                            />
+                        </div>
+                        <div className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img
+                                onClick={() => handleImageClick(l2)}
+                                src={l2}
+                                alt="License 2"
+                                className="w-full max-w-md rounded-lg shadow-2xl border-4 border-[#f7c414]"
+                            />
+                        </div>
+                        <div className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img
+                                onClick={() => handleImageClick(l3)}
+                                src={l3}
+                                alt="License 3"
+                                className="w-full max-w-md rounded-lg shadow-2xl border-4 border-[#f7c414]"
+                            />
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className=" overlay bg-black bg-opacity-50 " data-stellar-background-ratio="0.5">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12 col-12">
-                                <div className="content">
-                                    <h2 className="text-white text-center font-bold text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-4xl">
-                                        Buxoro Xalqaro Universiteti Doktarantura Litsenziyasi
-                                    </h2>
+            {/* Second License Section */}
+            <section>
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="text-white text-center font-bold text-3xl sm:text-4xl md:text-5xl mb-12">
+                        Buxoro Xalqaro Universiteti Doktarantura Litsenziyasi
+                    </h2>
 
-
-
-                                    <div className="my-4 flex flex-wrap justify-center gap-4">
-                                        <div className="flex flex-wrap justify-center">
-                                            <div className={"hidden xl:block"}></div>
-                                            <div>
-                                                <img
-                                                    onClick={() => handleImageClick(l4)}
-                                                    width={360}
-                                                    src={l4}
-                                                    alt="License 2"
-                                                />
-                                            </div>
-                                            <div>
-                                                <img
-                                                    onClick={() => handleImageClick(l4)}
-                                                    width={360}
-                                                    src={l5}
-                                                    alt="License 2"
-                                                />
-                                            </div>
-                                            <div className={"hidden xl:block"}></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="flex flex-wrap justify-center gap-8">
+                        <div className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img
+                                onClick={() => handleImageClick(l4)}
+                                src={l4}
+                                alt="Doctorate License 1"
+                                className="w-full max-w-md rounded-lg shadow-2xl border-4 border-[#f7c414]"
+                            />
+                        </div>
+                        <div className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+                            <img
+                                onClick={() => handleImageClick(l5)}
+                                src={l5}
+                                alt="Doctorate License 2"
+                                className="w-full max-w-md rounded-lg shadow-2xl border-4 border-[#f7c414]"
+                            />
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-            </div>
-            <Modal open={open} onClose={handleClose} center>
+            {/* Modal */}
+            <Modal
+                open={open}
+                onClose={handleClose}
+                center
+                classNames={{
+                    overlay: 'customOverlay',
+                    modal: 'customModal',
+                }}
+            >
                 {currentImage && (
                     <img
                         src={currentImage}
-                        alt="dived License"
-                        style={{ width: "400px", height: "auto" }}
+                        alt="Enlarged License"
+                        className="max-w-full max-h-[80vh] object-contain"
                     />
                 )}
             </Modal>
+
+            <style jsx global>{`
+                .customOverlay {
+                    background: rgba(0, 0, 0, 0.8) !important;
+                    backdrop-filter: blur(5px);
+                }
+                .customModal {
+                    background: transparent !important;
+                    box-shadow: none !important;
+                    padding: 0 !important;
+                    max-width: 90% !important;
+                    width: auto !important;
+                }
+            `}</style>
         </div>
     );
 }
