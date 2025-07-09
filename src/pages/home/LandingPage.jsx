@@ -5,6 +5,7 @@ import Footer from "../../components/footer/Footer";
 import Partnership from "../../components/partnership/Partnership";
 import License from "../../components/license/License";
 import News from "../../components/news/News";
+<<<<<<< HEAD
 import Usefullinfo from "../../components/UsefulInfo/UsefulInfo";
 import one from "../images/one.png";
 import two from "../images/two.png";
@@ -14,6 +15,10 @@ import six from "../images/six.png";
 import rektor from "../images/rektor.png";
 import kazlov from "../images/kazlov.png";
 import ali from "../images/ali.png";
+=======
+import ApplicationForm from "../../components/application-form/ApplicationForm";
+
+>>>>>>> 479672e (my commit)
 function LandingPage() {
   const professors = [
     {
@@ -178,6 +183,7 @@ function LandingPage() {
           </div>
         </div>
         <Partnership />
+        <ApplicationForm/>
         <License />
         <Usefullinfo />
         <News />
