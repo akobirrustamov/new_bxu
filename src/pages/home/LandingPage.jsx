@@ -158,18 +158,18 @@ function LandingPage() {
                 key={index}
                 className="flex flex-col sm:flex-row bg-[#f7f8fa] rounded-xl shadow-sm overflow-hidden"
               >
-                <div className="shrink-0 w-full sm:w-48 h-48 mb-4 sm:mb-0 sm:mr-6 overflow-hidden rounded-lg">
+                <div className="shrink-0 mb-4 sm:mb-0 sm:mr-8 overflow-hidden rounded-lg">
                   <img
                     src={prof.img}
                     alt={prof.name}
-                    className="w-full h-full object-cover"
+                    className="w-[390px] h-[380px] object-cover"
                   />
                 </div>
-                <div className="flex flex-col justify-center">
-                  <h3 className="text-[30px] font-semibold text-[#0c1d53] mb-1">
+                <div className="flex flex-col mt-4">
+                  <h3 className="text-[30px] font-semibold text-[#213972] mb-1">
                     {prof.name}
                   </h3>
-                  <p className="text-[20px] text-gray-700 leading-relaxed">
+                  <p className="text-[24px] w-[750px] text-gray-700 leading-relaxed">
                     {prof.desc}
                   </p>
                 </div>
