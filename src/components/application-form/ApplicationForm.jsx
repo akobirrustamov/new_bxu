@@ -4,6 +4,7 @@ const ApplicationForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    massage: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -31,7 +32,7 @@ const ApplicationForm = () => {
 
       if (!response.ok) throw new Error("Server error");
 
-      setFormData({ name: "", phone: "" });
+      setFormData({ name: "", phone: "", massage: "" });
       setSubmitSuccess(true);
       setTimeout(() => setSubmitSuccess(false), 4000);
     } catch (error) {
@@ -82,6 +83,15 @@ const ApplicationForm = () => {
                 className="w-full border border-[#213972] text-[#213972] rounded-md px-4 py-2 placeholder-[#213972] focus:outline-none focus:ring-2 focus:ring-[#213972]"
                 required
               />
+
+              <textarea
+                placeholder="Xabar"
+                name="massage"
+                value={formData.massage}
+                onChange={handleChange}
+                className="resize-none w-full border border-[#213972] text-[#213972] rounded-md px-4 py-2 placeholder-[#213972] focus:outline-none focus:ring-2 focus:ring-[#213972]"
+                required
+              ></textarea>
 
               <button
                 type="submit"

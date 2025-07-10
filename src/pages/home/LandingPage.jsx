@@ -1,6 +1,6 @@
 import "./LandingPage.css";
 import React, { useEffect, useState } from "react";
-import Header from "../../components/header/header";
+import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Partnership from "../../components/partnership/Partnership";
 import License from "../../components/license/License";
@@ -414,7 +414,7 @@ function LandingPage() {
 
               {/* Display programs for active tab */}
               <div className="bg-white pb-12 mx-auto rounded-xl">
-                <div className="flex md:w-[410px] w-[327px] bg-[#B0B9CC] rounded-full p-1 mb-8">
+                <div className="flex md:w-[412px] w-[327px] bg-[#B0B9CC] rounded-full p-1 mb-8">
                   {Object.keys(directions.data).map((label, idx) => (
                     <button
                       key={idx}
