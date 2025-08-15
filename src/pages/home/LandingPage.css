@@ -103,7 +103,7 @@ html {
 .action-buttons {
   display: flex;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 30px;
   text-wrap: nowrap;
 }
 
@@ -242,8 +242,8 @@ html {
 
   .feature-point {
     width: 100%;
-    font-size: 16px;
-    padding: 15px 20px;
+    font-size: 14px;
+    padding: 10px 20px;
   }
 
   .action-buttons {

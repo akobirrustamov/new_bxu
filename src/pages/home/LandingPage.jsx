@@ -11,6 +11,7 @@ import one from "../images/one.png";
 import two from "../images/two.png";
 import three from "../images/three.png";
 import four from "../images/four.png";
+import five from "../images/five.jpg";
 import six from "../images/six.png";
 import rektor from "../images/rektor.png";
 import kazlov from "../images/kazlov.png";
@@ -34,38 +35,10 @@ function LandingPage() {
               price: "15 million",
             },
             {
-              type: "Sirtqi",
-              duration: "5 yil",
-              language: "O'zbek tili",
-              price: "12 million",
-            },
-          ],
-        },
-        {
-          code: "60111800 - Xorijiy til va adabiyoti (tillar bo'yicha)",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "4 yil",
-              language: "O'zbek tili",
-              price: "15 million",
-            },
-            {
               type: "Masofaviy",
               duration: "4 yil",
               language: "O'zbek tili",
               price: "10 million",
-            },
-          ],
-        },
-        {
-          code: "60112600 - Maktabgacha va boshlang'ich ta'limda xorijiy til",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "4 yil",
-              language: "O'zbek tili",
-              price: "15 million",
             },
           ],
         },
@@ -79,105 +52,10 @@ function LandingPage() {
               price: "15 million",
             },
             {
-              type: "Kechki",
-              duration: "5 yil",
-              language: "O'zbek tili",
-              price: "14 million",
-            },
-          ],
-        },
-        {
-          code: "60111400 - O'zbek tili va adabiyoti",
-          programs: [
-            {
-              type: "Kunduzgi",
+              type: "Masofaviy",
               duration: "4 yil",
-              language: "O'zbek tili",
-              price: "15 million",
-            },
-            {
-              type: "Sirtqi",
-              duration: "5 yil",
-              language: "O'zbek tili",
-              price: "12 million",
-            },
-          ],
-        },
-        {
-          code: "60220300 - Tarix (mamlakatlar va yo'nalishlar bo'yicha)",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "4 yil",
-              language: "O'zbek tili",
-              price: "15 million",
-            },
-          ],
-        },
-        {
-          code: "60111300 - Musiqa ta'limi",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "3 yil",
-              language: "O'zbek tili",
-              price: "12 million",
-            },
-            {
-              type: "Kechki",
-              duration: "5 yil",
               language: "O'zbek tili",
               price: "10 million",
-            },
-          ],
-        },
-        {
-          code: "60110200 - Maktabgacha ta'lim",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "3 yil",
-              language: "O'zbek tili",
-              price: "12 million",
-            },
-          ],
-        },
-        {
-          code: "60110500 - Boshlang'ich ta'lim",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "4 yil",
-              language: "O'zbek tili",
-              price: "15 million",
-            },
-            {
-              type: "Sirtqi",
-              duration: "5 yil",
-              language: "O'zbek tili",
-              price: "12 million",
-            },
-          ],
-        },
-        {
-          code: "60112200 - Jismoniy madaniyat",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "3 yil",
-              language: "O'zbek tili",
-              price: "12 million",
-            },
-          ],
-        },
-        {
-          code: "60112100 - Milliy g'oya, ma'naviyat asoslari va huquq ta'limi",
-          programs: [
-            {
-              type: "Kunduzgi",
-              duration: "4 yil",
-              language: "O'zbek tili",
-              price: "15 million",
             },
           ],
         },
@@ -199,6 +77,139 @@ function LandingPage() {
           ],
         },
         {
+          code: "60111300 - Musiqa ta'limi",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "12 million",
+            },
+            {
+              type: "Kechki",
+              duration: "5 yil",
+              language: "O'zbek tili",
+              price: "10 million",
+            },
+          ],
+        },
+        {
+          code: "60411702 - Logistika",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+            {
+              type: "Masofaviy",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "10 million",
+            },
+          ],
+        },
+        {
+          code: "60540100 - Matematika",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+            {
+              type: "Masofaviy",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "10 million",
+            },
+          ],
+        },
+
+        {
+          code: "60111800 - Xorijiy til va adabiyoti (tillar bo'yicha)",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+          ],
+        },
+        {
+          code: "60112600 - Maktabgacha va boshlang'ich ta'limda xorijiy til",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+          ],
+        },
+
+        {
+          code: "60220300 - Tarix (mamlakatlar va yo'nalishlar bo'yicha)",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+          ],
+        },
+
+        {
+          code: "60110200 - Maktabgacha ta'lim",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "12 million",
+            },
+          ],
+        },
+
+        {
+          code: "60111400 - O'zbek tili va adabiyoti",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+          ],
+        },
+        {
+          code: "60112200 - Jismoniy madaniyat",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "12 million",
+            },
+          ],
+        },
+        {
+          code: "60110500 - Boshlang'ich ta'lim",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+          ],
+        },
+
+        {
           code: "61010400 - Turizm",
           programs: [
             {
@@ -211,6 +222,18 @@ function LandingPage() {
         },
         {
           code: "60110400 - Defektologiya",
+          programs: [
+            {
+              type: "Kunduzgi",
+              duration: "4 yil",
+              language: "O'zbek tili",
+              price: "15 million",
+            },
+          ],
+        },
+
+        {
+          code: "60112100 - Milliy g'oya, ma'naviyat asoslari va huquq ta'limi",
           programs: [
             {
               type: "Kunduzgi",
@@ -311,7 +334,74 @@ function LandingPage() {
           ],
         },
       ],
-      Doktorantura: [],
+      Doktorantura: [
+        {
+          code: "19.00.05 - Ijtimoiy psixologiya. Etnopsixologiya",
+          programs: [
+            {
+              type: "Aspirantura",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "Davlat granti",
+            },
+          ],
+        },
+        {
+          code: "19.00.06 - Yosh va pedagogik psixologiya. Rivojlanish psixologiyasi",
+          programs: [
+            {
+              type: "Aspirantura",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "Davlat granti",
+            },
+          ],
+        },
+        {
+          code: "13.00.02 - Ta’lim va tarbiya nazariyasi va metodikasi (sohalar bo‘yicha)",
+          programs: [
+            {
+              type: "Aspirantura",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "Davlat granti",
+            },
+          ],
+        },
+        {
+          code: "13.00.01 - Pedagogika nazariyasi. Pedagogik ta’limotlar tarixi",
+          programs: [
+            {
+              type: "Aspirantura",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "Davlat granti",
+            },
+          ],
+        },
+        {
+          code: "10.00.04 - Yevropa, Amerika va Avstraliya xalqlari tili va adabiyoti",
+          programs: [
+            {
+              type: "Aspirantura",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "Davlat granti",
+            },
+          ],
+        },
+        {
+          code: "10.00.06 - Qiyosiy adabiyotshunoslik, qiyosiy tilshunoslik va tarjimashunoslik",
+          programs: [
+            {
+              type: "Aspirantura",
+              duration: "3 yil",
+              language: "O'zbek tili",
+              price: "Davlat granti",
+            },
+          ],
+        },
+      ],
     },
   };
   const [activeTab, setActiveTab] = useState("Bakalavriyat"); // Default to first tab
@@ -335,10 +425,10 @@ function LandingPage() {
   ];
   const items = [
     { img: one, title: "Zamonaviy auditoriyalar" },
-    { img: two, title: "Ikkinchi va uchinchi kurs SIRTQI ta'lim" },
+    { img: two, title: "Universitet huzuridagi Ilmiy kengash mavjud" },
     { img: three, title: "Karyera markazi" },
     { img: four, title: "Xalqaro aloqalar" },
-    { img: four, title: "Startap va ishlanmalar laboratoriyasi" },
+    { img: five, title: "Talabalar uchun davlat granti mavjud" },
     { img: six, title: "100 mingdan ortiq manbalar" },
   ];
   return (
@@ -357,8 +447,9 @@ function LandingPage() {
             </div>
 
             <div className="feature-point">
-              Eng yuqori maosh to'lanadigan IT kasblari (AI, Kiberxavfsizlik,
-              Ma'lumotlar ilmi, Raqamli biznes)
+              Universitetda tahsil olayotgan talabalar uchun belgilangan
+              mezonlar asosida davlat granti ajratilishi mavjud bo‘lib, bu
+              grantlar iqtidorli talabalarni qo‘llab-quvvatlashga qaratilgan.
             </div>
 
             <div className="feature-point">
@@ -371,7 +462,7 @@ function LandingPage() {
                 <button className="primary-button">Ariza topshirish</button>
               </a>
               <button className="secondary-button">
-                Sirtqi va masofaviy ta'lim ham mavjud!
+                Masofaviy ta'lim ham mavjud!
               </button>
             </div>
           </div>
