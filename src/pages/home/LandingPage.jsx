@@ -339,7 +339,7 @@ function LandingPage() {
           code: "19.00.05 - Ijtimoiy psixologiya. Etnopsixologiya",
           programs: [
             {
-              type: "Aspirantura",
+              type: "Tayanch doktorantura",
               duration: "3 yil",
               language: "O'zbek tili",
               price: "Davlat granti",
@@ -350,7 +350,7 @@ function LandingPage() {
           code: "19.00.06 - Yosh va pedagogik psixologiya. Rivojlanish psixologiyasi",
           programs: [
             {
-              type: "Aspirantura",
+              type: "Tayanch doktorantura",
               duration: "3 yil",
               language: "O'zbek tili",
               price: "Davlat granti",
@@ -361,7 +361,7 @@ function LandingPage() {
           code: "13.00.02 - Ta’lim va tarbiya nazariyasi va metodikasi (sohalar bo‘yicha)",
           programs: [
             {
-              type: "Aspirantura",
+              type: "Tayanch doktorantura",
               duration: "3 yil",
               language: "O'zbek tili",
               price: "Davlat granti",
@@ -372,7 +372,7 @@ function LandingPage() {
           code: "13.00.01 - Pedagogika nazariyasi. Pedagogik ta’limotlar tarixi",
           programs: [
             {
-              type: "Aspirantura",
+              type: "Tayanch doktorantura",
               duration: "3 yil",
               language: "O'zbek tili",
               price: "Davlat granti",
@@ -383,7 +383,7 @@ function LandingPage() {
           code: "10.00.04 - Yevropa, Amerika va Avstraliya xalqlari tili va adabiyoti",
           programs: [
             {
-              type: "Aspirantura",
+              type: "Tayanch doktorantura",
               duration: "3 yil",
               language: "O'zbek tili",
               price: "Davlat granti",
@@ -394,7 +394,7 @@ function LandingPage() {
           code: "10.00.06 - Qiyosiy adabiyotshunoslik, qiyosiy tilshunoslik va tarjimashunoslik",
           programs: [
             {
-              type: "Aspirantura",
+              type: "Tayanch doktorantura",
               duration: "3 yil",
               language: "O'zbek tili",
               price: "Davlat granti",
@@ -410,7 +410,11 @@ function LandingPage() {
     {
       img: rektor,
       name: "Baratov Sharif Ramazanovich",
-      desc: "Buxoro Xalqaro Universiteti rektori, xalqaro psixologiya fanlari akademiyasining vitse-prezidenti, Psixologiya fanlari doktori, Professor",
+      desc: `Buxoro Xalqaro Universiteti rektori, xalqaro psixologiya fanlari akademiyasining vitse-prezidenti, Psixologiya fanlari doktori, Professor, 
+      1960 yil 22 martda Buxoro viloyati, Kogon tumanida tug’ilgan. Psixologiya fanlari doktori, professor.
+1979-1983 yy. Buxoro davlat pedagogika institutini tugatgan. Etnopsixologiya ixtisosligi bo’yicha “Ishlab chiqarish va ta’lim tizimida psixologik xizmatni joriy etishning psixologik xususiyatlari” mavzusida doktorlik dissertatsiyasini muvaffaqiyatli himoya qilgan. 
+      
+      `,
     },
     {
       img: kazlov,
@@ -632,18 +636,19 @@ function LandingPage() {
                 <h2 className="text-xl sm:text-4xl font-semibold mb-4">
                   Universitet haqida
                 </h2>
-                <p className="text-sm sm:text-2xl leading-relaxed">
-                  Prezidentimiz SH.M.Mirziyoyevning 2021-yil 21-22 yanvar
-                  kunlari Buxoro viloyatiga tashrifi davomida va Xalq
-                  deputatlari viloyat Kengashining navbatdagi tashqari
+                <p className="text-sm sm:text-2xl leading-relaxed text-justify">
+                  &nbsp;&nbsp;&nbsp;Prezidentimiz SH.M.Mirziyoyevning 2021-yil
+                  21-22 yanvar kunlari Buxoro viloyatiga tashrifi davomida va
+                  Xalq deputatlari viloyat Kengashining navbatdagi tashqari
                   sessiyasida bergan topshiriqlari bo'yicha 4-sonli bayonining
                   98-bandiga asosan tashkil etilgan.
                   <br />
-                  Oliygohimizda bugungi kunda 3 ta kampus, umumiy hisobda 6000
-                  o'rinli o'quv binosi hamda 500 o'rinli talabalar yotoqxonasi
-                  mavjud. Bizda jami 16 ta bakalavr, 8 ta magistratura hamda 6
-                  ta ta'lim shakli bo'yicha DOKTORANTURA (Psixologiya,
-                  Filologiya, Pedagogika fanlari bo'yicha) mavjud.
+                  &nbsp;&nbsp;&nbsp;&nbsp;Oliygohimizda bugungi kunda 3 ta
+                  kampus, umumiy hisobda 6000 o'rinli o'quv binosi hamda 500
+                  o'rinli talabalar yotoqxonasi mavjud. Bizda jami 16 ta
+                  bakalavr, 8 ta magistratura hamda 6 ta ta'lim shakli bo'yicha
+                  DOKTORANTURA (Psixologiya, Filologiya, Pedagogika fanlari
+                  bo'yicha) mavjud.
                 </p>
               </div>
             </div>

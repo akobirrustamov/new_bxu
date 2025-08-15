@@ -51,8 +51,8 @@ html {
 
 .hero-title {
   width: 650px;
-  font-size: 48px;
-  font-weight: 800;
+  font-size: 52px;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 30px;
   color: white;
@@ -65,8 +65,8 @@ html {
 }
 
 .feature-point {
+  /* text-align: ; */
   width: 750px;
-  opacity: 1;
   border-radius: 12px;
   border-width: 1px;
   font-weight: 500;
